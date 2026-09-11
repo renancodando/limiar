@@ -1,0 +1,750 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Italiana&display=swap');
+
+:root {
+    color-scheme: dark;
+    --bg: #121310;
+    --paper: #eeeae0;
+    --muted: #aaa99f;
+    --accent: #ff6035;
+    --line: #ffffff2b
+}
+
+* {
+    box-sizing: border-box
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 30px
+}
+
+body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--paper);
+    font-family: 'DM Sans',Arial,sans-serif
+}
+
+a {
+    color: inherit;
+    text-decoration: none
+}
+
+button {
+    font: inherit
+}
+
+    a:focus-visible, button:focus-visible {
+        outline: 2px solid var(--accent);
+        outline-offset: 7px
+    }
+
+.skip {
+    position: fixed;
+    top: -80px;
+    left: 20px;
+    z-index: 20;
+    padding: 16px;
+    background: var(--accent);
+    color: #121310
+}
+
+    .skip:focus {
+        top: 10px
+    }
+
+header {
+    height: 104px;
+    margin: 0 4.1%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--line);
+    position: relative;
+    z-index: 2
+}
+
+.brand {
+    font-size: 45px;
+    font-weight: 600;
+    letter-spacing: -3.8px
+}
+
+    .brand span {
+        font-size: 17px;
+        vertical-align: top;
+        display: inline-block;
+        margin: 8px 0 0 6px;
+        letter-spacing: 0
+    }
+
+.header-note, .hero-top, .eyebrow, .art-caption, .edge-label, .section-label, .lab-meta, .footer-top, .footer-bottom {
+    font-size: 12px;
+    letter-spacing: 1.2px;
+    line-height: 1.5
+}
+
+.header-note {
+    margin-left: 8%
+}
+
+.nav-link {
+    font-size: 14px
+}
+
+    .nav-link span {
+        color: var(--accent);
+        font-size: 22px;
+        margin-left: 20px
+    }
+
+.hero {
+    position: relative;
+    min-height: 850px;
+    isolation: isolate;
+    overflow: hidden
+}
+
+.hero-top {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    z-index: 2;
+    margin: 26px 4.1% 0;
+    color: var(--muted)
+}
+
+.hero-copy {
+    position: relative;
+    z-index: 2;
+    margin: 57px 0 95px 7.5%;
+    width: 62%;
+    pointer-events: none
+}
+
+    .hero-copy a {
+        pointer-events: auto
+    }
+
+.eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 12px
+}
+
+.cross {
+    color: var(--accent);
+    font-size: 28px
+}
+
+h1 {
+    font-size: clamp(70px,8.4vw,145px);
+    font-weight: 500;
+    line-height: .99;
+    letter-spacing: -.065em;
+    margin: 28px 0 33px
+}
+
+.serif, h2 em {
+    font-family: 'Italiana',Georgia,serif;
+    font-weight: 400;
+    letter-spacing: -.045em;
+    font-style: normal
+}
+
+.serif {
+    color: var(--accent);
+    font-size: 1.09em
+}
+
+.hero-bottom {
+    display: flex;
+    gap: 72px;
+    align-items: center
+}
+
+    .hero-bottom p {
+        font-size: 16px;
+        line-height: 1.7;
+        color: #ccc9bf
+    }
+
+.round-link {
+    width: 132px;
+    height: 132px;
+    border: 1px solid #ddd5bb7a;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    transform: rotate(-13deg);
+    transition: background .3s,transform .3s
+}
+
+    .round-link span {
+        font-size: 10px;
+        letter-spacing: 1.2px
+    }
+
+    .round-link b {
+        font-size: 27px;
+        font-weight: 400
+    }
+
+    .round-link:hover {
+        background: var(--accent);
+        color: var(--bg);
+        transform: rotate(0)
+    }
+
+.art-wrap {
+    position: absolute;
+    z-index: -1;
+    width: 80%;
+    height: 88%;
+    right: -20%;
+    top: 7%;
+    transform: rotate(-9deg)
+}
+
+.art {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    animation: float 12s ease-in-out infinite
+}
+
+.art-shade {
+    position: absolute;
+    inset: -2px;
+    background: linear-gradient(90deg,var(--bg),transparent 38%),linear-gradient(0deg,var(--bg),transparent 20%,transparent 85%,var(--bg))
+}
+
+.art-caption {
+    position: absolute;
+    bottom: 40px;
+    right: 5%;
+    display: flex;
+    gap: 40px;
+    color: var(--muted);
+    font-size: 10px
+}
+
+.edge-label {
+    position: absolute;
+    right: 18px;
+    top: 45%;
+    writing-mode: vertical-rl;
+    font-size: 10px;
+    color: var(--muted)
+}
+
+.ticker {
+    overflow: hidden;
+    background: var(--accent);
+    color: #171811;
+    padding: 22px 0;
+    transform: rotate(-1.5deg);
+    width: 100%;
+    position: relative;
+    z-index: 3
+}
+
+    .ticker div {
+        font-size: 25px;
+        font-weight: 500;
+        letter-spacing: -.7px;
+        white-space: nowrap;
+        width: max-content;
+        animation: marquee 45s linear infinite
+    }
+
+    .ticker span {
+        margin: 0 40px
+    }
+
+.manifesto {
+    padding: 120px 7.5% 105px;
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    gap: 40px
+}
+
+.section-label {
+    color: var(--muted);
+    padding-top: 14px
+}
+
+.manifesto h2, .experiment h2 {
+    font-size: clamp(34px,4.1vw,64px);
+    line-height: 1.14;
+    letter-spacing: -2.2px;
+    font-weight: 400;
+    margin: 0
+}
+
+    .manifesto h2 em {
+        color: var(--accent)
+    }
+
+.manifesto-body {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin: 35px 0 30px
+}
+
+    .manifesto-body p {
+        font-size: 16px;
+        color: var(--muted);
+        line-height: 1.8;
+        margin: 0
+    }
+
+.disciplines {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px
+}
+
+    .disciplines span {
+        border: 1px solid var(--line);
+        border-radius: 100px;
+        padding: 9px 15px;
+        font-size: 12px
+    }
+
+.experiment {
+    background: #e6e3da;
+    color: #1c1d18;
+    padding: 60px 7.5% 80px
+}
+
+    .experiment .section-label {
+        color: #55584d
+    }
+
+.experiment-intro {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    margin: 35px 0
+}
+
+    .experiment-intro p {
+        font-size: 16px;
+        line-height: 1.7;
+        margin: 0 0 7px 25px
+    }
+
+.lab {
+    background: #10110f;
+    color: var(--paper);
+    position: relative;
+    overflow: hidden
+}
+
+.lab-meta {
+    position: absolute;
+    left: 25px;
+    right: 25px;
+    top: 22px;
+    display: flex;
+    justify-content: space-between;
+    z-index: 2;
+    font-size: 10px
+}
+
+.lab-art {
+    height: 500px;
+    position: relative;
+    display: grid;
+    place-items: center;
+    overflow: hidden
+}
+
+    .lab-art img {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: filter 1.4s;
+        animation: float 12s ease-in-out infinite
+    }
+
+.lab-word {
+    font-family: 'Italiana',Georgia,serif;
+    font-size: clamp(110px,20vw,280px);
+    z-index: 1;
+    letter-spacing: -.06em;
+    pointer-events: none;
+    mix-blend-mode: exclusion
+}
+
+.lab-controls {
+    position: relative;
+    z-index: 2;
+    border-top: 1px solid var(--line);
+    display: flex;
+    padding: 18px 22px;
+    gap: 10px;
+    background: #151611
+}
+
+    .lab-controls button {
+        border: 1px solid #ffffff30;
+        background: transparent;
+        color: var(--paper);
+        border-radius: 50px;
+        padding: 12px 18px;
+        cursor: pointer;
+        font-size: 14px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        transition: background .3s
+    }
+
+        .lab-controls button[aria-pressed=true] {
+            background: var(--paper);
+            color: #121310
+        }
+
+        .lab-controls button:hover {
+            border-color: var(--paper)
+        }
+
+    .lab-controls i {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: #ff6035
+    }
+
+    .lab-controls button[data-state=electric] i {
+        background: #86a0ff
+    }
+
+    .lab-controls button[data-state=mono] i {
+        background: #8c8c87
+    }
+
+    .lab-controls .motion {
+        margin-left: auto;
+        border-color: transparent;
+        font-size: 12px
+    }
+
+        .lab-controls .motion span {
+            margin-left: 10px
+        }
+
+body[data-state=electric] .lab-art img {
+    filter: hue-rotate(170deg) saturate(1.3)
+}
+
+body[data-state=mono] .lab-art img {
+    filter: grayscale(1) contrast(1.1)
+}
+
+body.paused .art, body.paused .lab-art img, body.paused .ticker div {
+    animation-play-state: paused
+}
+
+footer {
+    padding: 40px 4.1% 25px
+}
+
+.footer-top, .footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    font-size: 10px;
+    color: var(--muted)
+}
+
+    .footer-top a {
+        font-size: 14px;
+        color: var(--paper)
+    }
+
+.footer-brand {
+    font-size: clamp(120px,26vw,450px);
+    font-weight: 600;
+    line-height: 1.14;
+    letter-spacing: -.095em;
+    position: relative;
+    display: inline-block
+}
+
+    .footer-brand span {
+        font-size: .12em;
+        letter-spacing: 0;
+        position: absolute;
+        top: 22%;
+        right: -.9em
+    }
+
+.footer-bottom {
+    border-top: 1px solid var(--line);
+    padding-top: 22px
+}
+
+@keyframes float {
+    0%,100% {
+        transform: scale(1.02) translateY(0)
+    }
+
+    50% {
+        transform: scale(1.055) translateY(-12px)
+    }
+}
+
+@keyframes marquee {
+    to {
+        transform: translateX(-50%)
+    }
+}
+
+@media(min-width:1700px) {
+    .hero {
+        min-height: 1000px
+    }
+
+    .hero-copy {
+        margin-top: 90px
+    }
+}
+
+@media(max-width:900px) {
+    .header-note {
+        display: none
+    }
+
+    .hero {
+        min-height: 800px
+    }
+
+    .hero-copy {
+        width: 85%;
+        margin-left: 6%;
+        margin-top: 90px
+    }
+
+    h1 {
+        font-size: clamp(70px,11vw,100px)
+    }
+
+    .art-wrap {
+        width: 110%;
+        right: -37%;
+        top: 2%;
+        opacity: .7
+    }
+
+    .hero-copy .eyebrow {
+        font-size: 10px
+    }
+
+    .art-caption {
+        font-size: 9px;
+        gap: 20px
+    }
+
+    .manifesto {
+        grid-template-columns: 1fr;
+        padding: 80px 6%;
+        gap: 25px
+    }
+
+    .experiment {
+        padding: 50px 6%
+    }
+
+    .lab-controls {
+        flex-wrap: wrap
+    }
+
+        .lab-controls .motion {
+            margin-left: 0
+        }
+
+    .lab-art {
+        height: 420px
+    }
+}
+
+@media(max-width:540px) {
+    header {
+        height: 85px;
+        margin: 0 6%
+    }
+
+    .brand {
+        font-size: 37px
+    }
+
+    .nav-link {
+        font-size: 12px
+    }
+
+        .nav-link span {
+            margin-left: 7px
+        }
+
+    .hero-top {
+        font-size: 9px;
+        margin: 20px 6% 0
+    }
+
+    .hero {
+        min-height: 760px
+    }
+
+    .hero-copy {
+        margin-top: 80px;
+        margin-bottom: 85px;
+        width: 92%
+    }
+
+    h1 {
+        font-size: 76px;
+        letter-spacing: -5px;
+        margin: 25px 0
+    }
+
+    .serif {
+        font-size: .99em
+    }
+
+    .eyebrow {
+        max-width: 85%
+    }
+
+    .hero-bottom {
+        gap: 30px
+    }
+
+        .hero-bottom p {
+            font-size: 14px
+        }
+
+    .round-link {
+        width: 112px;
+        height: 112px;
+        flex-shrink: 0
+    }
+
+        .round-link span {
+            font-size: 9px
+        }
+
+    .art-wrap {
+        width: 150%;
+        height: 70%;
+        right: -65%;
+        top: 13%;
+        opacity: .55
+    }
+
+    .edge-label {
+        display: none
+    }
+
+    .art-caption {
+        left: 6%;
+        right: 6%;
+        bottom: 28px;
+        justify-content: space-between;
+        gap: 15px;
+        font-size: 8px
+    }
+
+    .ticker {
+        padding: 17px 0
+    }
+
+        .ticker div {
+            font-size: 20px
+        }
+
+    .manifesto h2, .experiment h2 {
+        font-size: 38px;
+        letter-spacing: -1.5px
+    }
+
+    .manifesto-body {
+        grid-template-columns: 1fr;
+        gap: 20px
+    }
+
+    .experiment-intro {
+        display: block
+    }
+
+        .experiment-intro p {
+            margin: 25px 0 0
+        }
+
+    .lab-art {
+        height: 350px
+    }
+
+    .lab-controls {
+        padding: 14px 10px;
+        gap: 8px
+    }
+
+        .lab-controls button {
+            font-size: 12px;
+            padding: 11px 12px
+        }
+
+    .lab-meta {
+        left: 14px;
+        right: 14px;
+        font-size: 8px
+    }
+
+    .footer-top {
+        align-items: start
+    }
+
+        .footer-top > span {
+            max-width: 50%
+        }
+
+        .footer-top a {
+            font-size: 12px
+        }
+
+    .footer-brand {
+        font-size: 27vw;
+        margin: 20px 0
+    }
+
+    .footer-bottom {
+        flex-wrap: wrap;
+        font-size: 8px
+    }
+
+        .footer-bottom span:last-child {
+            display: none
+        }
+}
+
+@media(prefers-reduced-motion:reduce) {
+    html {
+        scroll-behavior: auto
+    }
+
+    .art, .lab-art img, .ticker div {
+        animation: none
+    }
+
+    .lab-art img, .round-link {
+        transition: none
+    }
+}

@@ -1,0 +1,315 @@
+
+main {
+    overflow: visible
+}
+
+.hero {
+    display: grid;
+    grid-template-columns: minmax(0,1.05fr) minmax(0,1fr);
+    grid-template-areas: 'meta meta' 'copy art' 'caption caption';
+    gap: 1.5rem;
+    min-height: 0;
+    overflow: visible;
+    padding: 0 var(--gutter) 2rem;
+    isolation: isolate
+}
+
+.hero-top {
+    grid-area: meta;
+    margin: 1.5rem 0 0
+}
+
+.hero-copy {
+    grid-area: copy;
+    width: auto;
+    max-width: 100%;
+    margin: 2rem 0;
+    pointer-events: auto;
+    align-self: center
+}
+
+.hero h1 {
+    font-size: clamp(2.5rem,6.7vw,7.5rem);
+    line-height: 1.1;
+    letter-spacing: -.045em;
+    max-width: 100%;
+    transform-origin: left center
+}
+
+.hero .serif {
+    font-size: 1em
+}
+
+.art-wrap {
+    grid-area: art;
+    position: relative;
+    inset: auto;
+    width: 100%;
+    height: auto;
+    min-width: 0;
+    aspect-ratio: 1.2;
+    align-self: center;
+    opacity: 1;
+    transform: none;
+    margin: 0;
+    z-index: 0;
+    overflow: hidden
+}
+
+.art {
+    position: absolute;
+    inset: 0;
+    object-fit: contain;
+    width: 100%;
+    height: 100%
+}
+
+.art-shade {
+    background: none
+}
+
+.art-caption {
+    grid-area: caption;
+    position: static;
+    max-width: 100%;
+    margin: 0;
+    justify-content: space-between;
+    gap: 1rem
+}
+
+.edge-label {
+    display: none
+}
+
+.hero-bottom {
+    gap: 1rem;
+    align-items: center
+}
+
+    .hero-bottom p {
+        flex: 1 1 14rem
+    }
+
+.round-link {
+    flex-shrink: 0;
+    transform: none !important
+}
+
+.hero .eyebrow {
+    max-width: 100%
+}
+
+.lab-meta {
+    position: relative;
+    inset: auto;
+    padding: 1rem;
+    display: flex;
+    gap: 1rem;
+    justify-content: space-between;
+    flex-wrap: wrap
+}
+
+.lab-art {
+    aspect-ratio: 1.8;
+    height: auto;
+    min-height: 0;
+    max-height: none;
+    overflow: hidden
+}
+
+    .lab-art img {
+        object-fit: contain
+    }
+
+.lab-word {
+    font-size: clamp(3rem,18vw,15rem)
+}
+
+.lab-controls {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(min(100%,10rem),1fr))
+}
+
+    .lab-controls button, .lab-controls .motion {
+        width: 100%;
+        min-width: 0;
+        margin: 0;
+        white-space: normal;
+        overflow-wrap: anywhere;
+        min-height: 48px;
+        padding: .75rem;
+        flex: none
+    }
+
+.global-motion {
+    position: relative;
+    inset: auto;
+    display: block;
+    margin: .75rem var(--gutter) .75rem auto;
+    max-width: calc(100% - 2*var(--gutter));
+    box-shadow: none
+}
+
+.footer-brand {
+    display: block;
+    max-width: 100%;
+    width: 100%;
+    font-size: clamp(4rem,23vw,24rem);
+    letter-spacing: -.075em;
+    line-height: 1.3
+}
+
+    .footer-brand span {
+        position: static;
+        vertical-align: super;
+        margin-left: .5em;
+        font-size: .09em
+    }
+
+.footer-top > span {
+    max-width: 100%
+}
+
+.footer-top, .footer-bottom {
+    flex-wrap: wrap
+}
+
+    .footer-bottom span {
+        max-width: 100%;
+        overflow-wrap: anywhere
+    }
+
+.manifesto, .experiment, footer {
+    min-width: 0
+}
+
+    .manifesto > * {
+        min-width: 0
+    }
+
+.scent-detail {
+    grid-template-columns: repeat(auto-fit,minmax(min(100%,20rem),1fr))
+}
+
+    .scent-detail h3 {
+        grid-row: auto
+    }
+
+    .scent-detail > * {
+        min-width: 0
+    }
+
+    .scent-detail > span {
+        grid-column: 1/-1
+    }
+
+.auto-stack {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important
+}
+
+    .auto-stack > * {
+        max-width: 100% !important;
+        min-width: 0 !important
+    }
+
+.hero.auto-stack .hero-top {
+    order: 0
+}
+
+.hero.auto-stack .hero-copy {
+    order: 1;
+    margin: 1rem 0
+}
+
+.hero.auto-stack .art-wrap {
+    order: 2;
+    width: 100%;
+    max-width: 50rem !important;
+    align-self: center;
+    aspect-ratio: 1.5
+}
+
+.hero.auto-stack .art-caption {
+    order: 3
+}
+
+.hero.auto-stack h1 {
+    font-size: clamp(2.5rem,10vw,6rem)
+}
+
+@media(max-width:850px) {
+    .hero {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem
+    }
+
+    .hero-top {
+        order: 0
+    }
+
+    .hero-copy {
+        order: 1;
+        margin: 1rem 0
+    }
+
+    .art-wrap {
+        order: 2;
+        aspect-ratio: 1.5;
+        max-width: 45rem;
+        align-self: center
+    }
+
+    .art-caption {
+        order: 3
+    }
+
+    .hero h1 {
+        font-size: clamp(2.5rem,10vw,6rem)
+    }
+
+    .manifesto-body {
+        grid-template-columns: 1fr
+    }
+
+    .lab-art {
+        aspect-ratio: 1.3
+    }
+}
+
+@media(max-width:400px) {
+    :root {
+        --gutter: 1rem
+    }
+
+    .hero h1 {
+        font-size: clamp(2rem,10vw,3rem)
+    }
+
+    .hero-bottom {
+        flex-direction: column;
+        align-items: flex-start
+    }
+
+        .hero-bottom p {
+            flex: none
+        }
+
+    .hero-top, .art-caption {
+        flex-direction: column
+    }
+
+    .lab-controls {
+        grid-template-columns: 1fr
+    }
+
+    .lab-meta {
+        flex-direction: column
+    }
+
+    .footer-top {
+        flex-direction: column
+    }
+}

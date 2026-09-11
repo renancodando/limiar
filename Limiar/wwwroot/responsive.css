@@ -1,0 +1,543 @@
+
+:root {
+    --gutter: clamp(1rem,4.5vw,5.5rem)
+}
+
+html {
+    scroll-padding-top: 2rem
+}
+
+body {
+    min-width: 0
+}
+
+main {
+    overflow: clip
+}
+
+h1, h2, h3 {
+    overflow-wrap: anywhere
+}
+
+.hero-copy, .manifesto > div, .experiment-intro > * {
+    min-width: 0
+}
+
+header {
+    margin-inline: var(--gutter);
+    gap: 1.5rem;
+    min-height: 6rem;
+    height: auto;
+    padding-block: 1.25rem;
+    flex-wrap: wrap
+}
+
+.brand span {
+    font-size: .75rem;
+    letter-spacing: 0;
+    margin-left: .65rem;
+    border: 1px solid #ffffff40;
+    padding: .15rem .3rem
+}
+
+.header-note {
+    margin-left: 0;
+    font-size: .75rem
+}
+
+.nav-link {
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center
+}
+
+.hero {
+    min-height: clamp(44rem,90svh,66rem)
+}
+
+.hero-top {
+    margin-inline: var(--gutter);
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    font-size: .75rem
+}
+
+.hero-copy {
+    margin-left: var(--gutter);
+    width: min(65%,65rem);
+    margin-top: clamp(3rem,7svh,7rem)
+}
+
+h1 {
+    font-size: clamp(4rem,8.7vw,9.5rem);
+    letter-spacing: -.055em;
+    line-height: 1.05
+}
+
+.serif {
+    font-size: 1.02em
+}
+
+.hero-bottom {
+    gap: clamp(1.5rem,4vw,5rem);
+    flex-wrap: wrap
+}
+
+    .hero-bottom p {
+        font-size: 1rem
+    }
+
+.eyebrow {
+    font-size: .75rem;
+    line-height: 1.65
+}
+
+.art-caption {
+    font-size: .75rem;
+    gap: 1.5rem;
+    right: var(--gutter);
+    max-width: 85%;
+    flex-wrap: wrap
+}
+
+.round-link {
+    min-width: 8rem;
+    min-height: 8rem
+}
+
+    .round-link span {
+        font-size: .75rem;
+        letter-spacing: .035em
+    }
+
+.manifesto, .experiment {
+    padding-inline: var(--gutter);
+    max-width: none
+}
+
+.manifesto {
+    grid-template-columns: minmax(9rem,1fr) minmax(0,3fr)
+}
+
+    .manifesto h2, .experiment h2 {
+        font-size: clamp(2rem,4.1vw,4.5rem);
+        letter-spacing: -.035em;
+        overflow-wrap: break-word
+    }
+
+.manifesto-body {
+    grid-template-columns: repeat(2,minmax(0,1fr));
+    gap: clamp(1.25rem,3vw,3rem)
+}
+
+.section-label, .disciplines span, .lab-meta, .footer-top, .footer-bottom {
+    font-size: .75rem
+}
+
+.disciplines span {
+    padding: .65rem 1rem
+}
+
+.experiment-intro {
+    gap: 2rem;
+    flex-wrap: wrap
+}
+
+    .experiment-intro p {
+        margin: 0;
+        max-width: 30rem;
+        flex: 0 1 26rem
+    }
+
+.lab {
+    container-type: inline-size
+}
+
+.lab-art {
+    height: auto;
+    aspect-ratio: 2.15;
+    min-height: 18rem;
+    max-height: 40rem
+}
+
+.lab-meta {
+    gap: 1rem;
+    flex-wrap: wrap
+}
+
+.lab-controls {
+    flex-wrap: wrap;
+    padding: 1rem;
+    gap: .65rem
+}
+
+    .lab-controls button {
+        min-height: 44px;
+        min-width: 44px;
+        font-size: .875rem;
+        justify-content: center
+    }
+
+    .lab-controls .motion {
+        font-size: .875rem
+    }
+
+.scent-detail {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: .75rem 2rem;
+    border-top: 1px solid #1c1d1840;
+    margin-top: 2rem;
+    padding-top: 1.5rem
+}
+
+    .scent-detail > span {
+        font-size: .75rem;
+        letter-spacing: .1em;
+        grid-column: 1/-1
+    }
+
+    .scent-detail h3 {
+        font-size: clamp(1.75rem,3.3vw,3rem);
+        font-weight: 400;
+        letter-spacing: -.035em;
+        grid-row: 2/4;
+        margin: 0
+    }
+
+    .scent-detail p {
+        margin: 0;
+        line-height: 1.7;
+        font-size: 1rem
+    }
+
+#scent-notes {
+    font-weight: 600
+}
+
+#scent-story {
+    color: #4d4e45
+}
+
+.global-motion {
+    min-height: 44px;
+    right: max(1rem,env(safe-area-inset-right));
+    bottom: max(1rem,env(safe-area-inset-bottom));
+    font-size: .875rem;
+    max-width: calc(100vw - 2rem)
+}
+
+footer {
+    padding-inline: var(--gutter);
+    padding-bottom: calc(6rem + env(safe-area-inset-bottom))
+}
+
+.footer-bottom {
+    flex-wrap: wrap
+}
+
+.footer-brand {
+    font-size: clamp(7rem,25vw,27rem)
+}
+
+    .footer-brand span {
+        font-size: .07em;
+        right: -1.8em;
+        top: 25%
+    }
+
+@container(max-width:650px) {
+    .lab-controls button[data-state] {
+        flex: 1 1 28%;
+        padding-inline: .6rem
+    }
+
+    .lab-controls .motion {
+        flex: 1 1 100%;
+        margin: 0
+    }
+
+    .lab-word {
+        font-size: 28cqw
+    }
+}
+
+@media(min-width:1600px) {
+    .hero-copy {
+        margin-left: max(var(--gutter),calc((100vw - 1600px)/2))
+    }
+
+    .manifesto > div:last-child {
+        max-width: 75rem
+    }
+
+    .art-wrap {
+        right: -8%;
+        width: 70%
+    }
+}
+
+@media(max-width:1000px) {
+    .hero-copy {
+        width: 85%
+    }
+
+    .manifesto {
+        grid-template-columns: 1fr;
+        gap: 1.75rem
+    }
+
+    .header-note {
+        display: none
+    }
+
+    .hero {
+        min-height: 48rem
+    }
+
+    .art-wrap {
+        right: -30%;
+        width: 110%;
+        opacity: .7
+    }
+
+    h1 {
+        font-size: clamp(4rem,11vw,7rem)
+    }
+}
+
+@media(max-width:650px) {
+    header {
+        padding-block: .75rem;
+        gap: .5rem;
+        min-height: 5rem
+    }
+
+    .nav-link {
+        font-size: .875rem
+    }
+
+    .hero {
+        display: flex;
+        flex-direction: column;
+        min-height: 0
+    }
+
+    .hero-top {
+        font-size: .75rem;
+        margin-top: 1.25rem;
+        gap: .35rem 1rem
+    }
+
+    .hero-copy {
+        width: auto;
+        margin: 2rem var(--gutter) 1rem;
+        order: 1
+    }
+
+    .hero-top {
+        order: 0
+    }
+
+    .hero h1 {
+        font-size: clamp(3rem,12.8vw,5rem);
+        margin-block: 1.5rem;
+        letter-spacing: -.05em
+    }
+
+    .hero .eyebrow {
+        font-size: .75rem;
+        max-width: none
+    }
+
+    .hero-bottom {
+        justify-content: space-between;
+        gap: 1rem
+    }
+
+        .hero-bottom p {
+            font-size: 1rem
+        }
+
+    .round-link {
+        width: 7.5rem;
+        height: 7.5rem;
+        min-width: 7.5rem;
+        min-height: 7.5rem
+    }
+
+    .art-wrap {
+        position: relative;
+        order: 2;
+        inset: auto;
+        width: 100%;
+        height: auto;
+        aspect-ratio: 1.35;
+        opacity: 1;
+        z-index: 0;
+        margin-top: -1rem;
+        overflow: hidden
+    }
+
+    .art {
+        position: absolute;
+        inset: 0
+    }
+
+    .art-caption {
+        position: relative;
+        order: 3;
+        inset: auto;
+        max-width: none;
+        margin: 0 var(--gutter) 2rem;
+        gap: .5rem;
+        font-size: .75rem
+    }
+
+    .edge-label {
+        display: none
+    }
+
+    .hero-copy {
+        pointer-events: auto
+    }
+
+    .manifesto {
+        padding-block: 4rem
+    }
+
+    .manifesto-body {
+        grid-template-columns: 1fr
+    }
+
+    .experiment {
+        padding-block: 3rem
+    }
+
+    .experiment-intro {
+        margin-block: 1.5rem
+    }
+
+    .lab-art {
+        aspect-ratio: 1.15;
+        min-height: 17rem
+    }
+
+    .lab-meta {
+        left: 1rem;
+        right: 1rem;
+        top: 1rem;
+        font-size: .75rem
+    }
+
+    .scent-detail {
+        grid-template-columns: 1fr
+    }
+
+        .scent-detail h3 {
+            grid-row: auto
+        }
+
+    .footer-top {
+        flex-wrap: wrap
+    }
+
+        .footer-top > span {
+            max-width: none
+        }
+
+    .footer-bottom span:last-child {
+        display: block
+    }
+
+    .footer-bottom {
+        gap: .75rem
+    }
+
+    .ticker div {
+        font-size: 1.25rem
+    }
+}
+
+@media(max-width:360px) {
+    .lab-controls button[data-state] {
+        flex-basis: 100%;
+        justify-content: flex-start
+    }
+
+    .hero-bottom {
+        align-items: flex-start
+    }
+
+    .hero-top {
+        flex-direction: column
+    }
+
+    .lab-meta {
+        font-size: .75rem
+    }
+
+    .global-motion {
+        font-size: .75rem
+    }
+
+    .brand {
+        font-size: 2rem
+    }
+}
+
+@media(max-height:550px) and (min-width:651px) {
+    .hero {
+        min-height: 0
+    }
+
+    .hero-copy {
+        margin-block: 2rem 5rem
+    }
+
+    .hero h1 {
+        font-size: clamp(3rem,8vw,5rem)
+    }
+
+    .art-wrap {
+        height: 85%;
+        top: 5%
+    }
+
+    .art-caption {
+        bottom: 1rem
+    }
+
+    .lab-art {
+        max-height: 80svh;
+        min-height: 15rem
+    }
+}
+
+@media(hover:none),(pointer:coarse) {
+    .round-link:hover {
+        transform: none
+    }
+
+    .lab-controls button, .nav-link {
+        min-height: 48px
+    }
+
+    .global-motion {
+        min-height: 48px
+    }
+
+    .lab {
+        touch-action: pan-y pinch-zoom
+    }
+}
+
+@media(prefers-reduced-motion:reduce) {
+    html {
+        scroll-behavior: auto
+    }
+
+    h1, .manifesto h2, .experiment h2, .footer-brand {
+        will-change: auto
+    }
+}
